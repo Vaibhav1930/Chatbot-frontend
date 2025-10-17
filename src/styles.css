@@ -1,15 +1,134 @@
-/* Minimal styles for chat UI to keep things simple and readable.
-   If you prefer Tailwind, replace with Tailwind setup; for ease-of-use we keep plain CSS here. */
-body { font-family: Arial, Helvetica, sans-serif; margin:0; padding:0; background:#f3f4f6; }
-.app { display:flex; height:100vh; }
-.sidebar { width:320px; background:#fff; border-right:1px solid #e5e7eb; padding:16px; box-sizing:border-box;}
-.chat { flex:1; display:flex; flex-direction:column; }
-.user-item { padding:8px; border-radius:6px; cursor:pointer; }
-.user-item:hover { background:#f9fafb; }
-.messages { flex:1; padding:16px; overflow:auto; }
-.message { margin-bottom:12px; max-width:60%; padding:10px; border-radius:8px; }
-.message.me { margin-left:auto; background:#d1fae5; }
-.message.them { background:#ffffff; }
-.input-row { padding:12px; border-top:1px solid #e5e7eb; display:flex; gap:8px; background:#fff; }
-.input-row input { flex:1; padding:8px 12px; border-radius:6px; border:1px solid #e5e7eb; }
-.btn { padding:8px 12px; border-radius:6px; background:#2563eb; color:#fff; border:none; cursor:pointer; }
+/* --- Styles --- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f3f4f6;
+}
+.app {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  width: 320px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #e5ddd5;
+  position: relative;
+}
+.chat-header {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+.user-item {
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.user-item.active, .user-item:hover {
+  background: #f9fafb;
+}
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.message {
+  margin-bottom: 12px;
+  display: flex;
+}
+.message.me {
+  justify-content: flex-end;
+}
+.bubble {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.message.me .bubble {
+  background: #dcf8c6;
+}
+.text {
+  font-size: 14px;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+}
+.image-attachment {
+  max-width: 250px;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 4px;
+}
+.file-bubble {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 10px;
+  text-decoration: none;
+  color: #2563eb;
+  margin-top: 4px;
+}
+.file-icon {
+  font-size: 18px;
+}
+.file-name {
+  font-size: 13px;
+  word-break: break-word;
+}
+.timestamp {
+  font-size: 11px;
+  color: #6b7280;
+  text-align: right;
+  margin-top: 4px;
+}
+.upload-progress {
+  text-align: center;
+  background: #2563eb;
+  color: #fff;
+  padding: 4px;
+  font-size: 13px;
+}
+.input-row {
+  padding: 12px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 8px;
+  background: #fff;
+}
+.attach-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.input-row input[type="text"], .input-row input:not([type]) {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
